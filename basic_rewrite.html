@@ -12,17 +12,16 @@
 
 <!--Home Page-->  
 <div data-role="page" id="home" data-title="Home" data-fullscreen="true">    
-<!--<div data-role="header">
+<div data-role="header">
       <h1>myPersonalAssistant</h1>
-	  ￼<a href="#other" data-role="button" data-inline="true" data-icon="plus" class="ui-btn-right">Add Event</a>
-</div>-->
+</div>
 
 <div data-role="content">
-	   	<br/><br/><br/>
 		<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-			<img src="images/juggling_mom.jpeg" width="300" height="300" alt="Logo"
-		<br/><br/><br/>
-		<a href="#setup" data-role="button" data-icon="check">Let's get organized!</a>
+			<br/><br/>
+				<img src="images/juggling_mom.jpeg" width="300" height="300" alt="Logo">
+			<br/><br/><br/>
+				<a href="#setup" data-role="button" data-icon="check">Let's get organized!</a>
 		</div>
 </div>
    
@@ -39,16 +38,34 @@
 
 <!--Setup Page-->  
 <div data-role="page" id="setup" data-title="Setup" data-fullscreen="true">    
-<!--<div data-role="header">
-      <h1>myPersonalAssistant</h1>
-	  ￼<a href="#other" data-role="button" data-inline="true" data-icon="plus" class="ui-btn-right">Add Event</a>
-</div>-->
+<div data-role="header">
+      <h1>Task Categories</h1>
+</div>
 
 <div data-role="content">
-	   	<br/><br/><br/>
-			<img src="images/juggling_mom.jpeg" width="300" height="300" alt="Logo"
-		<br/><br/><br/>
-		<a href="#other" data-role="button" data-icon="check">Let me help you get organized!</a>
+		<div data-role="fieldcontain">
+		  <fieldset data-role="controlgroup">
+			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
+				Please select the categories below that apply to you. Click the "Create Profile" button when you're ready to continue.
+			</div>
+			<br/>
+				<input type="checkbox" name="categories" id="home" value="home">
+		    		<label for="home">Home (Ex: Lawn, Maid, Air Filter)</label>
+				<input type="checkbox" name="categories" id="career" value="career">
+		    		<label for="career">Career (Ex: Meetings, Shifts)</label>
+				<input type="checkbox" name="categories" id="finance" value="finance">
+		    		<label for="finance">Finance (Ex: Bills, Investments)</label>
+				<input type="checkbox" name="categories" id="family" value="family">
+			    	<label for="family">Family (Ex: Kids, Spouse)</label>
+				<input type="checkbox" name="categories" id="auto" value="auto">
+				    <label for="auto">Automobile (Ex: Oil Change, Tires)</label>
+				<input type="checkbox" name="categories" id="misc" value="misc">
+					 <label for="misc">Misc (Ex: Errands, Goals)</label>
+				<input type="checkbox" name="categories" id="custom" value="custom">
+					 <label for="custom">Custom Category</label>
+		  </fieldset>
+		<a href="#other" data-role="button" data-icon="check">Create Profile</a>
+		</div>
 </div>
    
 <!--<div data-role="footer" data-position="fixed">
