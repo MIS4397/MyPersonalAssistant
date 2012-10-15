@@ -13,7 +13,83 @@
 <!--Home Page-->  
 <div data-role="page" id="home" data-title="Home" data-fullscreen="true">    
 <div data-role="header">
-      <h1>myPersonalAssistant</h1>
+      <h1>myPersonalAttendant</h1>
+</div>
+
+<div data-role="content">
+		<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
+			<br/><br/>
+				<img src="images/juggling_mom.jpeg" width="300" height="300" alt="Logo">
+			<br/><br/><br/>
+				<!--<a href="#setup" data-role="button" data-icon="check">Let's get organized!</a>-->
+				<a href="#login" data-role="button" data-icon="check">Login</a>
+				<a href="#createaccount" data-role="button" data-icon="check">Create Account</a>
+		</div>
+</div>
+</div>
+
+<!--Login Page-->  
+<div data-role="page" id="login" data-title="Login" data-fullscreen="true">    
+<div data-role="header">
+      <h1>Login</h1>
+</div>
+
+<div data-role="content">
+			<div data-role="fieldcontain">
+			  <label for="loginEmail">Email:</label>
+			  <input type="email" name="loginEmail" id="loginEmail">
+			</div>
+			
+			<div data-role="fieldcontain">
+			  <label for="password">Password:</label>
+			  <input type="password" name="password" id="password">
+			</div>
+			
+			<a href="#start" data-role="button" data-icon="check">Login</a>
+			<a href="#createaccount" data-role="button" data-icon="check">Create an Account</a>
+</div>
+</div>
+
+<!--Create Account-->  
+<div data-role="page" id="createaccount" data-title="Create" data-fullscreen="true">    
+<div data-role="header">
+      <h1>Create Account</h1>
+</div>
+
+<div data-role="content">
+	<div data-role="fieldcontain">
+	  <label for="firstName">First Name:</label>
+	  <input type="text" name="firstName" id="firstName">
+	</div>
+	
+	<div data-role="fieldcontain">
+	  <label for="lastName">Last Name:</label>
+	  <input type="text" name="lastName" id="lastName">
+	</div>
+	
+	<div data-role="fieldcontain">
+	  <label for="loginEmail">Email:</label>
+	  <input type="email" name="lastName" id="lastName">
+	</div>
+	
+	<div data-role="fieldcontain">
+	  <label for="password">Password:</label>
+	  <input type="password" name="password" id="password">
+	</div>
+	
+	<div data-role="fieldcontain">
+	  <label for="confirmpass">Confirm Password:</label>
+	  <input type="password" name="confirmpass" id="confirmpass">
+	</div>
+	
+	<a href="#start" data-role="button" data-icon="check">Create Account</a>
+</div>
+</div>
+
+<!--Start Page-->  
+<div data-role="page" id="start" data-title="Start" data-fullscreen="true">    
+<div data-role="header">
+      <h1>myPersonalAttendant</h1>
 </div>
 
 <div data-role="content">
@@ -24,17 +100,7 @@
 				<a href="#setup" data-role="button" data-icon="check">Let's get organized!</a>
 		</div>
 </div>
-   
-<!--<div data-role="footer" data-position="fixed">
-	 d<iv data-role="navbar" data-id="nav">
-        <ul>
-          <li><a href="#home" class="ui-btn-active ui-state-persist" data-transition="slide">Home</a></li>
-          <li><a href="#other" data-transition="slide">Other</a></li>
-        </ul>
-      </div>
-</div>-->
 </div>
-
 
 <!--Setup Page-->  
 <div data-role="page" id="setup" data-title="Setup" data-fullscreen="true">    
