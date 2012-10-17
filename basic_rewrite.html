@@ -4,7 +4,7 @@
   <title>My Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css"/>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 </head>
@@ -35,6 +35,7 @@
 </div>
 
 <div data-role="content">
+		<form action="php/processLogin.php" method="post" data-transition="pop">
 			<div data-role="fieldcontain">
 			  <label for="loginEmail">Email:</label>
 			  <input type="email" name="loginEmail" id="loginEmail">
@@ -45,8 +46,9 @@
 			  <input type="password" name="password" id="password">
 			</div>
 			
-			<a href="#start" data-role="button" data-icon="check">Login</a>
-			<a href="#createaccount" data-role="button" data-icon="check">Create an Account</a>
+			<input type="submit" name="login" id="login" value="Login">	
+		</form>
+		<a href="#createaccount" data-role="button" data-icon="check">Create Account</a>
 </div>
 </div>
 
@@ -57,32 +59,34 @@
 </div>
 
 <div data-role="content">
-	<div data-role="fieldcontain">
-	  <label for="firstName">First Name:</label>
-	  <input type="text" name="firstName" id="firstName">
-	</div>
+	<form action="php/createAccount.php" method="post" data-transition="pop">
+		<div data-role="fieldcontain">
+	  		<label for="firstName">First Name:</label>
+	  		<input type="text" name="firstName" id="firstName">
+		</div>
 	
-	<div data-role="fieldcontain">
-	  <label for="lastName">Last Name:</label>
-	  <input type="text" name="lastName" id="lastName">
-	</div>
+		<div data-role="fieldcontain">
+	  		<label for="lastName">Last Name:</label>
+	  		<input type="text" name="lastName" id="lastName">
+		</div>
 	
-	<div data-role="fieldcontain">
-	  <label for="loginEmail">Email:</label>
-	  <input type="email" name="lastName" id="lastName">
-	</div>
+		<div data-role="fieldcontain">
+	  		<label for="loginEmail">Email:</label>
+	  		<input type="email" name="lastName" id="lastName">
+		</div>
 	
-	<div data-role="fieldcontain">
-	  <label for="password">Password:</label>
-	  <input type="password" name="password" id="password">
-	</div>
+		<div data-role="fieldcontain">
+	  		<label for="password">Password:</label>
+	  		<input type="password" name="password" id="password">
+		</div>
 	
-	<div data-role="fieldcontain">
-	  <label for="confirmpass">Confirm Password:</label>
-	  <input type="password" name="confirmpass" id="confirmpass">
-	</div>
+		<div data-role="fieldcontain">
+	  		<label for="confirmpass">Confirm Password:</label>
+	  		<input type="password" name="confirmpass" id="confirmpass">
+		</div>
 	
-	<a href="#start" data-role="button" data-icon="check">Create Account</a>
+		<input type="submit" name="createaccnt" id="createaccnt" value="Save and Start Organizing">
+	</form>
 </div>
 </div>
 
