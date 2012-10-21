@@ -49,12 +49,11 @@ if ( $senderName && $senderEmail && $message ) {
       <h1>Hairy Hippo</h1>
 </div>
     <div data-role="content">
-		<?php echo "/n".$createacct."/n".$firstName."/n" ?>
-	
+<?php echo "/n".$createacct."/n".$firstName."/n".$lastName."/n".$loginEmail."/n".$password ."/n"?>
 <?php if ( isset( $_POST['firstName'] )  { ?>
       <div style="text-align: center;">
         <h2>Thanks!</h2>
-        <img src="images/logo.png" width="200" alt="Logo">
+        <img src="images/juggling_mom.jpeg" width="200" alt="Logo">
         <p>Thanks for sending your message! We'll get back to you shortly.</p>
       </div>
 <?php } else { ?>
