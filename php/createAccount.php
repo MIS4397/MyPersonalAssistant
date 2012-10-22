@@ -29,11 +29,16 @@ echo $firstName;
 <?php
 echo $createacct;
 echo $firstName;
+echo "Testing this out";
+
+$myString = "Hello!";
+echo $myString;
+echo "<h5>I love using PHP!</h5>";
 /*$con = mysql_connect("localhost","root","root");
 if (!$con)
-  {
+ {
   	die('Could not connect: ' . mysql_error());
-  }
+ }
 mysql_select_db("appdb", $con);
 mysql_close($con)*/
 
