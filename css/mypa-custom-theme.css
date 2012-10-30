@@ -13,6 +13,20 @@
 
 /* A
 -----------------------------------------------------------------------------------------------------------*/
+.center {
+	margin: 0px;
+	margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: orange;
+	background: yellow;
+}
 
 .ui-bar-a {
 	border: 1px solid #ed1c24 /*{a-bar-border}*/;
