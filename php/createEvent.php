@@ -1,12 +1,9 @@
 <?php
 //Define variables
-$id = $_POST['id'];
-$home = $_POST['home'];
-$career = $_POST['career'];
-$finance = $_POST['finance'];
-$family = $_POST['family'];
-$auto = $_POST['auto'];
-$misc = $_POST['misc'];
+session_start();
+$id = $_SESSION['globalid'];
+$type = $_POST['select'];
+$_SESSION['globaltype']=$type;
 ?>
 <!doctype html>
 <html>
@@ -17,11 +14,12 @@ $misc = $_POST['misc'];
   <div data-role="page" id="createEvent" data-title="createEvent">
     
 <div data-role="header">
-      <h1>Create Event</h1>	  
+      <h1>Create Event</h1>
+	  <a href="#" data-icon="arrow-l" data-rel="back">Back</a>
 </div>
 
 <div data-role="content">
-<h3>Please enter the date, time, location, and any notes you may have relating to your event here.</h3>
+<h3>Please enter the date, time, location, and any notes you may have relating to your event <?php /*echo $type*/?> here.</h3>
 	
 <form action="insertCategories.php" method="post">
 	<div data-role="fieldcontain" style='text-align:center;'>
@@ -45,14 +43,11 @@ $misc = $_POST['misc'];
 	</div>
 	
 	<div style='text-align:center;'>
-		<input type="hidden" name="uid" id="uid" value="<?php echo $id?>">
-		<input type="hidden" name="home" id="home" value="<?php echo $home?>">
-		<input type="hidden" name="career" id="career" value="<?php echo $career?>">
-		<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
-		<input type="hidden" name="family" id="family" value="<?php echo $family?>">
-		<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
-		<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">
+		<!--<input type="hidden" name="passid" id="passid" value="<?php echo $id?>">
+		<input type="hidden" id="passtrigger" name="passtrigger" value='1'/>
+	<input type="hidden" id="passevent" name="passevent" value="<?php echo $type?>"/>-->
 	<input type="submit" name="eventSubmit" id="eventSubmit" value="Create Event"/></div>
+	<a href="#" type="button" data-rel="back">Cancel</a>
 </form>
 </div>
 	</div>

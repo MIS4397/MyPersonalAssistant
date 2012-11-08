@@ -1,11 +1,13 @@
 <?php
 //Define variables
-$id = $_POST['passval'];
+session_start();
+$id = $_SESSION['globalid'];
 ?>
 <!doctype html>
 <html>
 <head>
   <title>Categories</title>
+  
 </head>
 <body>
   <div data-role="page" id="categorySelect" data-title="Category Select">
@@ -39,8 +41,8 @@ $id = $_POST['passval'];
 				<!--<input type="checkbox" name="custom" id="custom" value="custom">
 					 <label for="custom">Custom Category</label>-->
 		  </fieldset>
-			<input type="hidden" id="passid" name="passid" value='<?php echo $id ?>'>
-			<input type="submit" name="formSubmit" id="formSubmit" value="Create Profile"/>
+			<!--<input type="hidden" id="passid" name="passid" value='<?php echo $id ?>'>-->
+			<input type="submit" name="formSubmit" id="formSubmit" value="Create Profile" class="insertCategories"/>
 		</div>
 	</form>
 	</div>

@@ -52,3 +52,49 @@
 [23-Oct-2012 08:22:06] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/attend/public_html/app/php/viewEvents.php on line 45
 [23-Oct-2012 08:23:30] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/attend/public_html/app/php/viewEvents.php on line 45
 [23-Oct-2012 08:25:50] PHP Parse error:  syntax error, unexpected T_STRING in /home/attend/public_html/app/php/viewEvents.php on line 57
+[04-Nov-2012 21:27:28] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/attend/public_html/myapp/php/insertCategories.php on line 49
+[04-Nov-2012 21:40:55] PHP Fatal error:  Unsupported operand types in /home/attend/public_html/myapp/php/insertCategories.php on line 60
+[04-Nov-2012 21:44:18] PHP Fatal error:  Unsupported operand types in /home/attend/public_html/myapp/php/insertCategories.php on line 58
+[04-Nov-2012 21:56:37] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/attend/public_html/myapp/php/insertCategories.php on line 50
+[06-Nov-2012 03:42:55] PHP Fatal error:  Call to undefined function  str_to_date() in /home/attend/public_html/myapp/php/insertCategories.php on line 205
+[06-Nov-2012 03:44:06] PHP Fatal error:  Call to undefined function  str_to_date() in /home/attend/public_html/myapp/php/insertCategories.php on line 205
+[06-Nov-2012 03:45:06] PHP Fatal error:  Call to undefined function  str_to_date() in /home/attend/public_html/myapp/php/insertCategories.php on line 205
+[06-Nov-2012 04:46:06] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:46:06] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:46:06] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:46:06] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:46:06] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:46:06] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:49:16] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:49:16] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:49:16] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:49:16] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:49:16] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:49:16] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:43] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting T_STRING or T_VARIABLE or T_NUM_STRING in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:49] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting T_STRING or T_VARIABLE or T_NUM_STRING in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:59] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:59] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:59] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:59] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:59] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:50:59] PHP Warning:  date_format() expects parameter 1 to be DateTime, integer given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:24] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:24] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:24] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:24] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:24] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:24] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:49] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:49] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:49] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:49] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:49] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:49] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
+[06-Nov-2012 06:42:38] PHP Parse error:  syntax error, unexpected ';' in /home/attend/public_html/myapp/php/createEvent.php on line 28

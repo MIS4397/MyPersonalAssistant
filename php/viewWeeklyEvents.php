@@ -37,7 +37,7 @@ if (!$con)
 
 mysql_select_db("attend_appdb", $con);
 
-$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_UserID = '$id' AND Event_Date = CurDate() ORDER BY Event_Time";
+$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID, DATE_FORMAT(Event_Date,'%m/%d/%Y') AS EvDate FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_UserID = '$id' AND Event_Date = CurDate() ORDER BY Event_Time";
 
 if(!$sql)
 {
@@ -66,7 +66,7 @@ if ($rows > 1)
 <?php
 while($row = mysql_fetch_assoc($findrecord))
 {?>
-	<li><h3><?php echo $row['Task_Name']." <br/> ".$row['Time']." <br/>Location: ".$row['Event_Loc']."  <br/>Note: ".$row['Event_Note'];?></h3></li><?php
+	<li><h3><?php echo $row['Task_Name']." <br/> ".$row['Time']." <br/>Date: ".$row['EvDate']."  <br/>Location: ".$row['Event_Loc']."  <br/>Note: ".$row['Event_Note'];?></h3></li><?php
 }?></ul>
 	</div>
 

@@ -53,7 +53,7 @@
 .ui-bar-a select,
 .ui-bar-a textarea,
 .ui-bar-a button {
-	   font-family: Comic Sans MS, Comic Sans MS5, cursive /*{global-font-family}*/;
+	  font-family: Arial, Arial, Cursive /*{global-font-family}*/;
 }
 .ui-body-a,
 .ui-overlay-a {
@@ -77,7 +77,7 @@
 .ui-body-a select,
 .ui-body-a textarea,
 .ui-body-a button {
-	   font-family: Comic Sans MS, Comic Sans MS5, cursive /*{global-font-family}*/;
+	  font-family: Arial, Arial, Cursive /*{global-font-family}*/;
 }
 .ui-body-a .ui-link-inherit {
 	color: #333333 /*{a-body-color}*/;
@@ -156,7 +156,7 @@
 .ui-btn-up-a,
 .ui-btn-hover-a,
 .ui-btn-down-a {
-	   font-family: Comic Sans MS, Comic Sans MS5, cursive /*{global-font-family}*/;
+	  font-family: Arial, Arial, Cursive /*{global-font-family}*/;
 	text-decoration: none;
 }
 
@@ -187,7 +187,7 @@ a.ui-link-inherit {
 	background-image:     -ms-linear-gradient( #b20606 /*{global-active-background-start}*/, #b20606 /*{global-active-background-end}*/); /* IE10 */
 	background-image:      -o-linear-gradient( #b20606 /*{global-active-background-start}*/, #b20606 /*{global-active-background-end}*/); /* Opera 11.10+ */
 	background-image:         linear-gradient( #b20606 /*{global-active-background-start}*/, #b20606 /*{global-active-background-end}*/);
-	   font-family: Comic Sans MS, Comic Sans MS5, cursive /*{global-font-family}*/;
+	  font-family: Arial, Arial, Cursive /*{global-font-family}*/;
 }
 .ui-btn-active:visited,
 .ui-btn-active:hover,

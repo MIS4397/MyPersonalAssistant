@@ -1,6 +1,8 @@
 <?php
 //Define variables
-$id = $_POST['passid'];
+session_start();
+$id = $_SESSION['globalid'];
+$trigger = $_POST['passtrigger'];
 ?>
 <!doctype html>
 <html>
@@ -16,7 +18,6 @@ $id = $_POST['passid'];
 	   <a href="index.html#events" data-role="button">Add</a>
 </div>	
 <?php
-
 $con = mysql_connect("localhost","attend_admin","create");
 
 if (!$con)
@@ -25,6 +26,40 @@ if (!$con)
  }
 
 mysql_select_db("attend_appdb", $con);
+
+if($formSubmit == "Create Profile")
+{
+	if($home)
+	{
+		$sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','1')";
+		mysql_query($sql);
+	}
+	if($career)
+	{
+		$sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','2')";
+		mysql_query($sql);
+	}
+	if($finance)
+	{
+		$sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','3')";
+		mysql_query($sql);
+	}
+	if($family)
+	{
+		$sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','4')";
+		mysql_query($sql);
+	}
+	if($auto)
+	{
+		$sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','5')";
+		mysql_query($sql);
+	}
+	if($misc)
+	{
+		$sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','6')";
+		mysql_query($sql);
+	}
+}
 
 /*$findrecord = mysql_query("SELECT * FROM User WHERE User_LogN = '$loginEmail' AND User_Pass = '$password'");
 
@@ -42,141 +77,129 @@ while($row = mysql_fetch_assoc($findrecord))
 
 if ($rows == 1)*/
 
-if($home)
+if(!$formSubmit)
 {
-    $sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','1')";
-	mysql_query($sql);
+		$catsetup = mysql_query("SELECT * FROM User_Cat_XREF WHERE User_ID = '$id'");
+		
+			$home = "";
+			$career = "";
+			$finance = "";
+			$family = "";
+			$auto = "";
+			$misc = "";
+			
+			while($row = mysql_fetch_assoc($catsetup))
+			{
+				switch ($row["Cat_No"]) {
+					case 1:
+						$home = "home";
+						break;
+					case 2:
+						$career = "career";
+						break;
+					case 3:
+						$finance = "finance";
+						break;
+					case 4:
+						$family = "family";
+						break;
+					case 5:
+						$auto = "auto";
+						break;
+					case 6:
+						$misc = "misc";
+						break;
+				}
+		    }
+}
+
+if($home == "home")
+{
 	echo "<h3 style='text-align:center;'>Home: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="home-select" id="home-select">
+	<select name="select">
 	   <option value="1">Mow Lawn</option>
 	   <option value="7">Clean Room</option>
 	   <option value="8">Wash Clothes</option>
 	   <option value="9">Grocery Shopping</option>
 	</select>
-	<script type ="javascript">var name = document.homeform.home-select.value;</script>
-	<input type="hidden" name="id" id="id" value="<?php echo $id?>">
-	<input type="hidden" name="home" id="home" value="<?php echo $home?>">
-	<input type="hidden" name="career" id="career" value="<?php echo $career?>">
-	<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
-	<input type="hidden" name="family" id="family" value="<?php echo $family?>">
-	<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
-	<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">
 	<input type="submit" name="homeSubmit" id="homeSubmit" value="Add">
 	</form>
 <?php echo "<br />";}
-if($career)
+if($career == "career")
 {
-    $sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','2')";
-	mysql_query($sql);
 	echo "<h3 style='text-align:center;'>Career: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="career-select" id="career-select">
+	<select name="select">
 	   <option value="11">Weekly Meeting</option>
 	   <option value="12">Shift</option>
 	</select>
-	<input type="hidden" name="id" id="id" value="<?php echo $id?>">
-	<input type="hidden" name="home" id="home" value="<?php echo $home?>">
-	<input type="hidden" name="career" id="career" value="<?php echo $career?>">
-	<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
-	<input type="hidden" name="family" id="family" value="<?php echo $family?>">
-	<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
-	<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">
 	<input type="submit" name="careerSubmit" id="careerSubmit" value="Add">
+	</form>
 <?php echo "<br />";}
-if($finance)
+if($finance == "finance")
 {
-    $sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','3')";
-	mysql_query($sql);
 	echo "<h3 style='text-align:center;'>Finance: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="finance-select" id="finance-select">
+	<select name="select">
 	   <option value="13">Water Bill</option>
 	   <option value="14">Electricity Bill</option>
 	   <option value="16">Credit Card Bill</option>
 	   <option value="18">Car Note</option>
 	   <option value="19">Phone Bill</option>
 	</select>
-	<input type="hidden" name="id" id="id" value="<?php echo $id?>">
-	<input type="hidden" name="home" id="home" value="<?php echo $home?>">
-	<input type="hidden" name="career" id="career" value="<?php echo $career?>">
-	<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
-	<input type="hidden" name="family" id="family" value="<?php echo $family?>">
-	<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
-	<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">
 	<input type="submit" name="financeSubmit" id="financeSubmit" value="Add">
+	</form>
 <?php echo "<br />";}
-if($family)
+if($family == "family")
 {
-    $sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','4')";
 	echo "<h3 style='text-align:center;'>Family: </h3><br />";
-	mysql_query($sql);
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="family-select" id="family-select">
+	<select name="select">
 	    <option value="21">Weekly Practice</option>
 		<option value="22">School</option>
 	</select>
-	<input type="hidden" name="id" id="id" value="<?php echo $id?>">
-	<input type="hidden" name="home" id="home" value="<?php echo $home?>">
-	<input type="hidden" name="career" id="career" value="<?php echo $career?>">
-	<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
-	<input type="hidden" name="family" id="family" value="<?php echo $family?>">
-	<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
-	<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">
 	<input type="submit" name="familySubmit" id="familySubmit" value="Add">
+	</form>
 <?php echo "<br />";}
-if($auto)
+if($auto == "auto")
 {
-    $sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','5')";
 	echo "<h3 style='text-align:center;'>Automobile:</h3><br />";
-	mysql_query($sql);
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="auto-select" id="auto-select">
+	<select name="select">
 	   <option value="28">Oil Change</option>
 	   <option value="29">Buy Oil</option>
 	   <option value="31">Tire Alignment</option>
 	</select>
-	<input type="hidden" name="id" id="id" value="<?php echo $id?>">
-	<input type="hidden" name="home" id="home" value="<?php echo $home?>">
-	<input type="hidden" name="career" id="career" value="<?php echo $career?>">
-	<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
-	<input type="hidden" name="family" id="family" value="<?php echo $family?>">
-	<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
-	<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">
 	<input type="submit" name="autoSubmit" id="autoSubmit" value="Add">
+	</form>
 <?php echo "<br />";}
-if($misc)
+if($misc == "misc")
 {
-    $sql = "INSERT INTO User_Cat_XREF (User_ID, Cat_No) VALUES ('$id','6')";
 	echo "<h3 style='text-align:center;'>Misc: </h3><br />";
-	mysql_query($sql);
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="misc-select" id="misc-select">
+	<select name="select">
 	   <option value="35">Dry Cleaning</option>
 	   <option value="36">Promotion Goal</option>
 	   <option value="37">Marathon Goal</option>
 	   <option value="38">Health Goal</option>
 	</select>
-	<input type="hidden" name="id" id="id" value="<?php echo $id?>">
-	<input type="hidden" name="home" id="home" value="<?php echo $home?>">
-	<input type="hidden" name="career" id="career" value="<?php echo $career?>">
-	<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
-	<input type="hidden" name="family" id="family" value="<?php echo $family?>">
-	<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
-	<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">
 	<input type="submit" name="miscSubmit" id="miscSubmit" value="Add">
+	</form>
 <?php echo "<br />";}
 
 if($eventSubmit)
 {
-	echo $uid;
-	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$uid','1','$time','$date','$location','$notes','0','0')";
+	$evtype = $_SESSION['globaltype'];
+	//$evtype = $_POST['passevent'];
+	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
+	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$evtype','$cleantime','$date','$location','$notes','0','0')";
 	mysql_query($sql2);
 }
 

@@ -1,5 +1,6 @@
 <?php
 //Define variables
+session_start();
 $loginEmail = $_POST['loginEmail'];
 $password = $_POST['password'];
 ?>
@@ -45,6 +46,8 @@ if ($rows == 1)
 {
 	$uid = mysql_query("SELECT User_ID FROM User WHERE User_LogN = '$loginEmail' AND User_Pass = '$password'");
 	
+	$rows == 0;
+	
 	if(!$uid)
 	{
 		die(mysql_error());
@@ -52,16 +55,33 @@ if ($rows == 1)
 
 	$id = mysql_result($uid, 0); 
 	
-	echo "<h3 style='text-align:center;'>You're logged in and ready to go!</h3>"?>
+	// store session data
+	$_SESSION['globalid']=$id;
+	
+	$catsetup = mysql_query("SELECT * FROM User_Cat_XREF WHERE User_ID = '$id'");
+	
+	while($row = mysql_fetch_assoc($catsetup))
+		{
+			$rows = $rows + 1;
+	    }
+	
+	echo "<h4 style='text-align:center;'>You're logged in and ready to go!</h4>"?>
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
+					<img src="../images/juggling_mom.jpeg" width="250" height="250" alt="Logo">
 				<br/><br/>
-					<img src="../images/juggling_mom.jpeg" width="300" height="300" alt="Logo">
-				<br/><br/><br/>
+	<?php if($rows <= 1) {?>
 				<form action="categorySelect.php" method="post">
 					<input type="hidden" id="passval" name="passval" value='<?php echo $id ?>'/>
 					<input type="submit" name="createaccnt" id="createaccnt" value="Let's get Organized!">
 				</form>
-				<!--<a href="#categorySelect" data-role="button">Let's get Organized!</a>-->
+	<?php }
+	else {?>
+		<form action="insertCategories.php" method="post">
+			<input type="hidden" id="passid" name="passid" value='<?php echo $id ?>'/>
+			<input type="hidden" id="passtrigger" name="passtrigger" value='1'/>
+			<input type="submit" name="loginacct" id="loginacct" value="Add Events">
+		</form>
+		<?php }?>
 			</div>
 	</div>
 	</div>
