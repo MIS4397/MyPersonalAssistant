@@ -67,7 +67,7 @@ if ($rows == 1)
 	
 	echo "<h4 style='text-align:center;'>You're logged in and ready to go!</h4>"?>
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-					<img src="../images/Logo2.jpg" width="250" height="250" alt="Logo">
+					<img src="../images/newicon.png" width="150" height="200" alt="Logo">
 				<br/><br/>
 	<?php if($rows <= 1) {?>
 				<form action="categorySelect.php" method="post">

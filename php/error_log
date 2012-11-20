@@ -98,3 +98,7 @@
 [06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
 [06-Nov-2012 04:53:55] PHP Warning:  date_format() expects parameter 1 to be DateTime, string given in /home/attend/public_html/myapp/php/viewWeeklyEvents.php on line 69
 [06-Nov-2012 06:42:38] PHP Parse error:  syntax error, unexpected ';' in /home/attend/public_html/myapp/php/createEvent.php on line 28
+[18-Nov-2012 22:51:56] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/viewMonthlyEvents.php on line 54
+[18-Nov-2012 22:54:42] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/viewMonthlyEvents.php on line 54
+[18-Nov-2012 22:54:45] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/viewMonthlyEvents.php on line 54
+[18-Nov-2012 22:57:04] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/viewMonthlyEvents.php on line 6

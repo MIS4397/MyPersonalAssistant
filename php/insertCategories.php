@@ -201,25 +201,31 @@ if($eventSubmit)
 	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
 	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$evtype','$cleantime','$date','$location','$notes','0','0')";
 	mysql_query($sql2);
+	?>
+	<div data-role="popup" id="popupBasic">
+		<p>This is a completely basic popup, no options set.<p>
+	</div><?php
+}
+
+if($updateEvent)
+{
+	$evtype = $_SESSION['globaltype'];
+	//$evtype = $_POST['passevent'];
+	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
+	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$evtype','$cleantime','$date','$location','$notes','0','0')";
+	
+	//$sql2 = "UPDATE Event SET Event_Time = '$cleantime',"
+	mysql_query($sql2);
+	?>
+	<div data-role="popup" id="popupBasic">
+		<p>This is a completely basic popup, no options set.<p>
+	</div><?php
 }
 
 mysql_close($con);
 ?>
 </div>
-
-<!--<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-	<form>
-		<div style="padding:10px 20px;">
-			<h3>Please sign in</h3>
-			<label for="un" class="ui-hidden-accessible">Username:</label>
-			<input type="text" name="user" id="un" value="" placeholder="username" data-theme="a" />
-			<label for="pw" class="ui-hidden-accessible">Password:</label>
-			<input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a" />
-			<button type="submit" data-theme="b">Sign in</button>
-		</div>
-	</form>
-</div>-->
-	</div>
+</div>
 	
 </body>
 </html>

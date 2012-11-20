@@ -2,12 +2,6 @@
 //Define variables
 session_start();
 $id = $_SESSION['globalid'];
-/*$home = $_POST['home'];
-$career = $_POST['career'];
-$finance = $_POST['finance'];
-$family = $_POST['family'];
-$auto = $_POST['auto'];
-$misc = $_POST['misc'];*/
 ?>
 <!doctype html>
 <html>
@@ -18,7 +12,7 @@ $misc = $_POST['misc'];*/
   <div data-role="page" id="createEvent" data-title="createEvent">
     
 <div data-role="header">
-      <h1>View Events</h1>
+      <h1>View Today's Events</h1>
 	  <a href="insertCategories.php" data-icon="arrow-l">Back</a>
 	  <a href="index.html#events" data-role="button">Add</a>
 </div>
@@ -50,16 +44,6 @@ if(!$findrecord)
 {
 	die(mysql_error());
 }
-
-/*while($row = mysql_fetch_assoc($findrecord))
-{
-	$rows = $rows + 1;
-}
-
-if ($rows > 1)
-{
-	echo "More than 1 event";
-}*/
 
 ?>
 <ul data-role="listview">

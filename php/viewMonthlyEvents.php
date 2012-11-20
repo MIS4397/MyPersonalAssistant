@@ -2,12 +2,6 @@
 //Define variables
 session_start();
 $id = $_SESSION['globalid'];
-/*$home = $_POST['home'];
-$career = $_POST['career'];
-$finance = $_POST['finance'];
-$family = $_POST['family'];
-$auto = $_POST['auto'];
-$misc = $_POST['misc'];*/
 ?>
 <!doctype html>
 <html>
@@ -18,14 +12,13 @@ $misc = $_POST['misc'];*/
   <div data-role="page" id="createEvent" data-title="createEvent">
     
 <div data-role="header">
-      <h1>View Events</h1>
+      <h1>View All Events</h1>
 	  <a href="insertCategories.php" data-icon="arrow-l">Back</a>
 	  <a href="index.html#events" data-role="button">Add</a>
 </div>
 
 <div data-role="content">
-<h3>The events for today are:</h3>
-
+<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> All of the events you have created are:</h3>
 <?php
 
 $con = mysql_connect("localhost","attend_admin","create");
@@ -37,7 +30,7 @@ if (!$con)
 
 mysql_select_db("attend_appdb", $con);
 
-$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID, DATE_FORMAT(Event_Date,'%m/%d/%Y') AS EvDate FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_UserID = '$id' ORDER BY EvDate, Event_Time";
+$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID, Event_ID, DATE_FORMAT(Event_Date,'%m/%d/%Y') AS EvDate FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_UserID = '$id' ORDER BY EvDate, Event_Time";
 
 if(!$sql)
 {
@@ -51,23 +44,19 @@ if(!$findrecord)
 	die(mysql_error());
 }
 
-/*while($row = mysql_fetch_assoc($findrecord))
-{
-	$rows = $rows + 1;
-}
-
-if ($rows > 1)
-{
-	echo "More than 1 event";
-}*/
-
 ?>
-<ul data-role="listview">
+<fieldset data-role="controlgroup">
+<form action="editEvent.php" method="post">
 <?php
 while($row = mysql_fetch_assoc($findrecord))
 {?>
-	<li><h3><?php echo $row['Task_Name']." <br/> ".$row['Time']." <br/>Date: ".$row['EvDate']."  <br/>Location: ".$row['Event_Loc']."  <br/>Note: ".$row['Event_Note'];?></h3></li><?php
-}?></ul>
+	<input type="radio" name="select" id="<?php echo $row['Event_ID']; ?>" value="<?php echo $row['Event_ID']; ?>">
+		<label for="<?php echo $row['Event_ID']; ?>"><?php echo $row['Task_Name']." <br/> ".$row['Time']." <br/>Date: ".$row['EvDate']."  <br/>Location: ".$row['Event_Loc']."  <br/>Note: ".$row['Event_Note']; ?></label><?php
+}?>
+<input type="submit" name="editEvent" id="editEvent" value="Edit Event"/>
+<a href="deleteEvent.php" type="button" id="deleteEvent" value="Delete Event">Delete Event</a>
+</form>
+</fieldset>
 	</div>
 
 <div data-role="footer" data-id="footer" data-position="fixed">
