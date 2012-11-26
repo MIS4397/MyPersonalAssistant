@@ -5,8 +5,6 @@ $id = $_SESSION['globalid'];
 $type = $_POST['select'];
 $_SESSION['globaltype']=$type;
 
-echo $type;
-
 $con = mysql_connect("localhost","attend_admin","create");
 
 if (!$con)
@@ -17,8 +15,6 @@ if (!$con)
 mysql_select_db("attend_appdb", $con);
 
 $sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID, Event_ID, DATE_FORMAT(Event_Date,'%m/%d/%Y') AS EvDate FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_ID = '$type' AND Event_UserID = '$id' ORDER BY EvDate, Event_Time";
-
-//$sql = "SELECT * FROM Event";
 
 if(!$sql)
 {
@@ -32,7 +28,21 @@ if(!$findrecord)
 	die(mysql_error());
 }
 
-$row = mysql_fetch_assoc($findrecord)
+$row = mysql_fetch_assoc($findrecord);
+$EvID = $row['Event_ID'];
+
+if($deleteEvent)
+{
+	$sql2 = "DELETE FROM Event WHERE Event_ID = '$EvID'";
+	mysql_query($sql2);
+	header( 'Location: http://mypersonalattendant.com/app/php/insertCategories.php');
+}
+if($editEvent)
+{
+$time = $row['Time'];
+$cleantime = DATE("H:i:s", STRTOTIME("$time"));
+$date = $row['EvDate'];
+$cleandate = DATE("Y-m-d", STRTOTIME("$date"));
 ?>
 <!doctype html>
 <html>
@@ -53,12 +63,12 @@ $row = mysql_fetch_assoc($findrecord)
 <form action="insertCategories.php" method="post">
 	<div data-role="fieldcontain" style='text-align:center;'>
      <label for="date">Date:</label>
-     <input type="date" name="date" id="date" value="<?php echo $row['EvDate'];?>"/>
+     <input type="date" name="date" id="date" value="<?php echo $cleandate;?>"/>
 	</div>
 	
 	<div data-role="fieldcontain" style='text-align:center;'>
      <label for="time">Time:</label>
-     <input type="time" name="time" id="time" value="<?php echo $row['Time'];?>"/>
+     <input type="time" name="time" id="time" value="<?php echo $cleantime;?>"/>
 	</div>
 
 	<div data-role="fieldcontain" style='text-align:center;'>
@@ -71,11 +81,13 @@ $row = mysql_fetch_assoc($findrecord)
 	<textarea cols="3" rows="5" name="notes" id="notes"><?php echo $row['Event_Note'];?></textarea>
 	</div>
 	
+	<input type="hidden" name="eventID" id="eventID" value="<?php echo $row['Event_ID'];?>"/>
+	
 	<div style='text-align:center;'>
 	<input type="submit" name="updateEvent" id="updateEvent" value="Save Changes"/></div>
 	<a href="#" type="button" data-rel="back">Cancel</a>
 </form>
-</div>
+</div><?php } ?>
 	</div>
 	
 </body>

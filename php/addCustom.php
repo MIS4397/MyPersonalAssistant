@@ -8,20 +8,25 @@ $_SESSION['globaltype']=$type;
 <!doctype html>
 <html>
 <head>
-  <title>Create Event</title>
+  <title>Custom Event</title>
 </head>
 <body>
   <div data-role="page" id="createEvent" data-title="createEvent">
     
 <div data-role="header">
-      <h1>Create Event</h1>
+      <h1>Custom Event</h1>
 	  <a href="#" data-icon="arrow-l" data-rel="back">Back</a>
 </div>
 
 <div data-role="content">
-<h3>Please enter the date, time, location, and any notes you may have relating to your event <?php /*echo $type*/?> here.</h3>
+<h3>Please enter the name, date, time, location, and any notes you may have relating to your event <?php /*echo $type*/?> here.</h3>
 	
 <form action="insertCategories.php" method="post">
+	<div data-role="fieldcontain" style='text-align:center;'>
+     <label for="date">Event Name:</label>
+     <input type="text" name="name" id="name" />
+	</div>
+	
 	<div data-role="fieldcontain" style='text-align:center;'>
      <label for="date">Date:</label>
      <input type="date" name="date" id="date" />
@@ -43,7 +48,7 @@ $_SESSION['globaltype']=$type;
 	</div>
 	
 	<div style='text-align:center;'>
-	<input type="submit" name="eventSubmit" id="eventSubmit" value="Create Event"/></div>
+	<input type="submit" name="customSubmit" id="customSubmit" value="Create Event"/></div>
 	<a href="#" type="button" data-rel="back">Cancel</a>
 </form>
 </div>

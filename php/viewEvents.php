@@ -12,13 +12,13 @@ $id = $_SESSION['globalid'];
   <div data-role="page" id="createEvent" data-title="createEvent">
     
 <div data-role="header">
-      <h1>View Today's Events</h1>
+      <h1>Today's Events</h1>
 	  <a href="insertCategories.php" data-icon="arrow-l">Back</a>
 	  <a href="index.html#events" data-role="button">Add</a>
 </div>
 
 <div data-role="content">
-<h3>The events for today are:</h3>
+<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> Today's events are:</h3>
 
 <?php
 
@@ -31,7 +31,7 @@ if (!$con)
 
 mysql_select_db("attend_appdb", $con);
 
-$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_UserID = '$id' AND Event_Date = CurDate() ORDER BY Event_Time";
+$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_CustomName, Event_Note, Event_UserID, Event_ID, DATE_FORMAT(Event_Date,'%m/%d/%Y') AS EvDate FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_UserID = '$id' AND Event_Date = CurDate() ORDER BY Event_Time";
 
 if(!$sql)
 {
@@ -46,12 +46,33 @@ if(!$findrecord)
 }
 
 ?>
-<ul data-role="listview">
+<fieldset data-role="controlgroup">
+<form action="editEvent.php" method="post">
 <?php
 while($row = mysql_fetch_assoc($findrecord))
+{
+if(!empty($row['Event_CustomName']))
+{
+?>
+	<input type="radio" name="select" id="<?php echo $row['Event_ID']; ?>" value="<?php echo $row['Event_ID']; ?>">
+		<label for="<?php echo $row['Event_ID']; ?>"><?php echo $row['Event_CustomName']." <br/> ".$row['Time']." <br/>Location: ".$row['Event_Loc']."  <br/>Note: ".$row['Event_Note']; ?></label>
+<?php
+}
+else
+{
+?>
+<input type="radio" name="select" id="<?php echo $row['Event_ID']; ?>" value="<?php echo $row['Event_ID']; ?>">
+	<label for="<?php echo $row['Event_ID']; ?>"><?php echo $row['Task_Name']." <br/> ".$row['Time']." <br/>Location: ".$row['Event_Loc']."  <br/>Note: ".$row['Event_Note']; ?></label>	
+<?php
+}
+}		
+if (mysql_num_rows ($findrecord) > 0)
 {?>
-	<li><h3><?php echo $row['Task_Name']." <br/> ".$row['Time']." <br/>Location: ".$row['Event_Loc']."  <br/>Note: ".$row['Event_Note'];?></h3></li><?php
-}?></ul>
+<input type="submit" name="editEvent" id="editEvent" value="Edit Event"/>
+<input type="submit" name="deleteEvent" id="deleteEvent" value="Delete Event"/>
+<?php }?>
+</form>
+</fieldset>
 	</div>
 
 <div data-role="footer" data-id="footer" data-position="fixed">
@@ -59,7 +80,7 @@ while($row = mysql_fetch_assoc($findrecord))
 				<ul>
 					<li><a href="viewEvents.php">Today</a></li>
 					<li><a href="viewWeeklyEvents.php">Weekly</a></li>
-					<li><a href="viewMonthlyEvents.php">All</a></li>
+					<li><a href="viewAllEvents.php">All</a></li>
 				</ul>
 			</div>
 	</div>

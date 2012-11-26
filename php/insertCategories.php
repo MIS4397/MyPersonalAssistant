@@ -17,6 +17,8 @@ $trigger = $_POST['passtrigger'];
 	  ￼<a href="viewEvents.php" data-role="button">View Events</a>
 	   <a href="index.html#events" data-role="button">Add</a>
 </div>	
+
+<div data-role="content">
 <?php
 $con = mysql_connect("localhost","attend_admin","create");
 
@@ -115,10 +117,10 @@ if(!$formSubmit)
 
 if($home == "home")
 {
-	echo "<h3 style='text-align:center;'>Home: </h3><br />";
+	echo "<h3 style='text-align:center;'>Home:</h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select">
+	<select name="select" data-mini="true">
 	   <option value="1">Mow Lawn</option>
 	   <option value="7">Clean Room</option>
 	   <option value="8">Wash Clothes</option>
@@ -132,8 +134,8 @@ if($career == "career")
 	echo "<h3 style='text-align:center;'>Career: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select">
-	   <option value="11">Weekly Meeting</option>
+	<select name="select" data-mini="true">
+	   <option value="11">Meeting</option>
 	   <option value="12">Shift</option>
 	</select>
 	<input type="submit" name="careerSubmit" id="careerSubmit" value="Add">
@@ -144,7 +146,7 @@ if($finance == "finance")
 	echo "<h3 style='text-align:center;'>Finance: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select">
+	<select name="select" data-mini="true">
 	   <option value="13">Water Bill</option>
 	   <option value="14">Electricity Bill</option>
 	   <option value="16">Credit Card Bill</option>
@@ -159,8 +161,8 @@ if($family == "family")
 	echo "<h3 style='text-align:center;'>Family: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select">
-	    <option value="21">Weekly Practice</option>
+	<select name="select" data-mini="true">
+	    <option value="21">Kids' Event</option>
 		<option value="22">School</option>
 	</select>
 	<input type="submit" name="familySubmit" id="familySubmit" value="Add">
@@ -171,7 +173,7 @@ if($auto == "auto")
 	echo "<h3 style='text-align:center;'>Automobile:</h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select">
+	<select name="select" data-mini="true">
 	   <option value="28">Oil Change</option>
 	   <option value="29">Buy Oil</option>
 	   <option value="31">Tire Alignment</option>
@@ -184,7 +186,7 @@ if($misc == "misc")
 	echo "<h3 style='text-align:center;'>Misc: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select">
+	<select name="select" data-mini="true">
 	   <option value="35">Dry Cleaning</option>
 	   <option value="36">Promotion Goal</option>
 	   <option value="37">Marathon Goal</option>
@@ -192,8 +194,10 @@ if($misc == "misc")
 	</select>
 	<input type="submit" name="miscSubmit" id="miscSubmit" value="Add">
 	</form>
-<?php echo "<br />";}
-
+	
+<?php echo "<br />";}?>
+<a href="addCustom.php" data-role="button" name="customEvent" id="customEvent">Add Custom Event</a>
+<?php
 if($eventSubmit)
 {
 	$evtype = $_SESSION['globaltype'];
@@ -202,24 +206,27 @@ if($eventSubmit)
 	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$evtype','$cleantime','$date','$location','$notes','0','0')";
 	mysql_query($sql2);
 	?>
-	<div data-role="popup" id="popupBasic">
+	<div data-role="popup" id="popupInserts">
+		<a href = "#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 		<p>This is a completely basic popup, no options set.<p>
-	</div><?php
+	</div>
+<?php
 }
 
-if($updateEvent)
+if($customSubmit)
 {
 	$evtype = $_SESSION['globaltype'];
 	//$evtype = $_POST['passevent'];
 	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
-	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$evtype','$cleantime','$date','$location','$notes','0','0')";
-	
-	//$sql2 = "UPDATE Event SET Event_Time = '$cleantime',"
+	$sql2 = "INSERT INTO Event (Event_UserID,Event_CustomName,Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$name','39','$cleantime','$date','$location','$notes','0','0')";
 	mysql_query($sql2);
-	?>
-	<div data-role="popup" id="popupBasic">
-		<p>This is a completely basic popup, no options set.<p>
-	</div><?php
+}
+
+if($updateEvent)
+{
+	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
+	$sql2 = "UPDATE Event SET Event_Time = '$cleantime', Event_Date = '$date', Event_Loc = '$location', Event_Note = '$notes' WHERE Event_ID = '$eventID'";
+	mysql_query($sql2);
 }
 
 mysql_close($con);
