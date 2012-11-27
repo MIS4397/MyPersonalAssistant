@@ -7,21 +7,25 @@ $id = $_SESSION['globalid'];
 <html>
 <head>
   <title>Categories</title>
+  
 </head>
 <body>
   <div data-role="page" id="categorySelect" data-title="Category Select">
-    <div data-role="header">
+    
+<div data-role="header">
       <h1>Task Categories</h1>
-	</div>  
+</div>
+    
 <div data-role="content">
 	<div data-role="content">
 		<form action="insertCategories.php" method="post">
 		<div data-role="fieldcontain">
 		  <fieldset data-role="controlgroup">
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-				<h3>Please select the Categories that apply to you. Then, click "Create Profile."</h3>
+				<h3>Please select the categories below that apply to you. Click the "Create Profile" button when you're ready to continue.</h3>
 			</div>
-			<!--<br/>-->
+
+			<br/>
 				<input type="checkbox" name="home" id="home" value="home">
 		    		<label for="home">Home (Ex: Lawn, Maid, Air Filter)</label>
 				<input type="checkbox" name="career" id="career" value="career">

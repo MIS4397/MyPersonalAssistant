@@ -14,12 +14,11 @@ $_SESSION['globaltype']=$type;
   <div data-role="page" id="createEvent" data-title="createEvent">
     
 <div data-role="header">
-      <h1>Create Event</h1>
-	  <a href="#" data-icon="arrow-l" data-rel="back">Back</a>
+      <h1>Create Event</h1>	  
 </div>
 
 <div data-role="content">
-<!--<h3>Please enter the date, time, location, and any notes you may have relating to your event <?php /*echo $type*/?> here.</h3>-->
+<h3>Please enter the date, time, location, and any notes you may have relating to your event here.</h3>
 	
 <form action="insertCategories.php" method="post">
 	<div data-role="fieldcontain" style='text-align:center;'>
@@ -43,8 +42,9 @@ $_SESSION['globaltype']=$type;
 	</div>
 	
 	<div style='text-align:center;'>
+		<!--<input type="hidden" name="passid" id="passid" value="<?php echo $id?>">
+		<input type="hidden" id="passtrigger" name="passtrigger" value='1'/>-->
 	<input type="submit" name="eventSubmit" id="eventSubmit" value="Create Event"/></div>
-	<a href="#" type="button" data-rel="back">Cancel</a>
 </form>
 </div>
 	</div>

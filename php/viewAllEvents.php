@@ -16,9 +16,8 @@ $id = $_SESSION['globalid'];
 	  <a href="insertCategories.php" data-icon="arrow-l">Back</a>
 	  <a href="index.html#events" data-role="button">Add</a>
 </div>
-
 <div data-role="content">
-<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> All of the events you have created are:</h3>
+<!--<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> All of the events you have created are:</h3>-->
 <?php
 
 $con = mysql_connect("localhost","attend_admin","create");

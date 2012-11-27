@@ -17,13 +17,15 @@ echo $confirmpass."\n";*/
 <!doctype html>
 <html>
 <head>
-  <title>Thank You!</title>
+  <title>Thanks!</title>
 </head>
 <body>
   <div data-role="page" id="contactResult">
-	<div data-role="header">
-      <h1>MyPA</h1>
-	</div>
+    
+<div data-role="header">
+      <h1>myPA</h1>
+</div>
+    
 <div data-role="content">
 <?php
 
@@ -72,25 +74,32 @@ if ($rows<1)
 		  		<label for="firstName">First Name:</label>
 		  		<input type="text" name="firstName" id="firstName" value="<?php echo $firstName ?>">
 			</div>
-			<div data-role="fieldcontain"> 
+
+			<div data-role="fieldcontain">
 		  		<label for="lastName">Last Name:</label>
 		  		<input type="text" name="lastName" id="lastName" value="<?php echo $lastName ?>">
 			</div>
+
 			<div data-role="fieldcontain">
 		  		<label for="loginEmail">Email:</label>
 		  		<input type="email" name="loginEmail" id="loginEmail" value="<?php echo $loginEmail ?>">
 			</div>
+
 			<div data-role="fieldcontain">
 		  		<label for="password">Password:</label>
 		  		<input type="password" name="password" id="password">
 			</div>
+
 			<div data-role="fieldcontain">
 		  		<label for="confirmpass">Confirm Password:</label>
 		  		<input type="password" name="confirmpass" id="confirmpass">
 			</div>
+
 			<input type="submit" name="createaccnt" id="createaccnt" value="Save and Start Organizing">
 		</form>
+
 		<?
+
 		echo "<br/><font color='red'>Your passwords are not the same. Please retype them.</font>";
 	}
 }

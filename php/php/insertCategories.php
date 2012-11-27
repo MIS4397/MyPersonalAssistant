@@ -3,6 +3,7 @@
 session_start();
 $id = $_SESSION['globalid'];
 $trigger = $_POST['passtrigger'];
+$type = $_SESSION['globaltype'];
 ?>
 <!doctype html>
 <html>
@@ -17,9 +18,9 @@ $trigger = $_POST['passtrigger'];
 	  ￼<a href="viewEvents.php" data-role="button">View Events</a>
 	   <a href="index.html#events" data-role="button">Add</a>
 </div>	
-
-<div data-role="content">
 <?php
+
+
 $con = mysql_connect("localhost","attend_admin","create");
 
 if (!$con)
@@ -117,15 +118,23 @@ if(!$formSubmit)
 
 if($home == "home")
 {
-	echo "<h3 style='text-align:center;'>Home:</h3><br />";
+	echo "<h3 style='text-align:center;'>Home: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select" data-mini="true">
+	<select name="select">
 	   <option value="1">Mow Lawn</option>
 	   <option value="7">Clean Room</option>
 	   <option value="8">Wash Clothes</option>
 	   <option value="9">Grocery Shopping</option>
 	</select>
+	<!--<script type ="javascript">var name = document.homeform.home-select.value;</script>-->
+	<!--<input type="hidden" name="id" id="id" value="<?php echo $id?>">
+	<input type="hidden" name="home" id="home" value="<?php echo $home?>">
+	<input type="hidden" name="career" id="career" value="<?php echo $career?>">
+	<input type="hidden" name="finance" id="finance" value="<?php echo $finance?>">
+	<input type="hidden" name="family" id="family" value="<?php echo $family?>">
+	<input type="hidden" name="auto" id="auto" value="<?php echo $auto?>">
+	<input type="hidden" name="misc" id="misc" value="<?php echo $misc?>">-->
 	<input type="submit" name="homeSubmit" id="homeSubmit" value="Add">
 	</form>
 <?php echo "<br />";}
@@ -134,19 +143,18 @@ if($career == "career")
 	echo "<h3 style='text-align:center;'>Career: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select" data-mini="true">
-	   <option value="11">Meeting</option>
+	<select name="select">
+	   <option value="11">Weekly Meeting</option>
 	   <option value="12">Shift</option>
 	</select>
 	<input type="submit" name="careerSubmit" id="careerSubmit" value="Add">
-	</form>
 <?php echo "<br />";}
 if($finance == "finance")
 {
 	echo "<h3 style='text-align:center;'>Finance: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select" data-mini="true">
+	<select name="select">
 	   <option value="13">Water Bill</option>
 	   <option value="14">Electricity Bill</option>
 	   <option value="16">Credit Card Bill</option>
@@ -154,86 +162,68 @@ if($finance == "finance")
 	   <option value="19">Phone Bill</option>
 	</select>
 	<input type="submit" name="financeSubmit" id="financeSubmit" value="Add">
-	</form>
 <?php echo "<br />";}
 if($family == "family")
 {
 	echo "<h3 style='text-align:center;'>Family: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select" data-mini="true">
-	    <option value="21">Kids' Event</option>
+	<select name="select">
+	    <option value="21">Weekly Practice</option>
 		<option value="22">School</option>
 	</select>
 	<input type="submit" name="familySubmit" id="familySubmit" value="Add">
-	</form>
 <?php echo "<br />";}
 if($auto == "auto")
 {
 	echo "<h3 style='text-align:center;'>Automobile:</h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select" data-mini="true">
+	<select name="select">
 	   <option value="28">Oil Change</option>
 	   <option value="29">Buy Oil</option>
 	   <option value="31">Tire Alignment</option>
 	</select>
 	<input type="submit" name="autoSubmit" id="autoSubmit" value="Add">
-	</form>
 <?php echo "<br />";}
 if($misc == "misc")
 {
 	echo "<h3 style='text-align:center;'>Misc: </h3><br />";
 	?>
 	<form action = "createEvent.php" method="post">
-	<select name="select" data-mini="true">
+	<select name="select">
 	   <option value="35">Dry Cleaning</option>
 	   <option value="36">Promotion Goal</option>
 	   <option value="37">Marathon Goal</option>
 	   <option value="38">Health Goal</option>
 	</select>
 	<input type="submit" name="miscSubmit" id="miscSubmit" value="Add">
-	</form>
-	
-<?php echo "<br />";}?>
-<a href="addCustom.php" data-role="button" name="customEvent" id="customEvent">Add Custom Event</a>
-<a href="categorySelect.php" data-role="button" name="customEvent" id="customEvent">Edit Categories</a>
-<?php
+<?php echo "<br />";}
+
 if($eventSubmit)
 {
-	$evtype = $_SESSION['globaltype'];
-	//$evtype = $_POST['passevent'];
-	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
-	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$evtype','$cleantime','$date','$location','$notes','0','0')";
-	mysql_query($sql2);
-	?>
-	<div data-role="popup" id="popupInserts">
-		<a href = "#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-		<p>This is a completely basic popup, no options set.<p>
-	</div>
-<?php
-}
-
-if($customSubmit)
-{
-	$evtype = $_SESSION['globaltype'];
-	//$evtype = $_POST['passevent'];
-	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
-	$sql2 = "INSERT INTO Event (Event_UserID,Event_CustomName,Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$name','39','$cleantime','$date','$location','$notes','0','0')";
-	mysql_query($sql2);
-}
-
-if($updateEvent)
-{
-	$cleantime = DATE("H:i:s", STRTOTIME("$time"));
-	$sql2 = "UPDATE Event SET Event_Time = '$cleantime', Event_Date = '$date', Event_Loc = '$location', Event_Note = '$notes' WHERE Event_ID = '$eventID'";
+	echo $uid;
+	$sql2 = "INSERT INTO Event (Event_UserID, Event_TaskID,Event_Time,Event_Date,Event_Loc,Event_Note,Event_Repeat,Event_RepSchedule) VALUES ('$id','$type','$time','$date','$location','$notes','0','0')";
 	mysql_query($sql2);
 }
 
 mysql_close($con);
 ?>
 </div>
-</div>
+
+<!--<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	<form>
+		<div style="padding:10px 20px;">
+			<h3>Please sign in</h3>
+			<label for="un" class="ui-hidden-accessible">Username:</label>
+			<input type="text" name="user" id="un" value="" placeholder="username" data-theme="a" />
+			<label for="pw" class="ui-hidden-accessible">Password:</label>
+			<input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a" />
+			<button type="submit" data-theme="b">Sign in</button>
+		</div>
+	</form>
+</div>-->
+	</div>
 	
 </body>
 </html>

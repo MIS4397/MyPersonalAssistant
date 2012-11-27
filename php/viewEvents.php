@@ -18,7 +18,8 @@ $id = $_SESSION['globalid'];
 </div>
 
 <div data-role="content">
-<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> Today's events are:</h3>
+<!--<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> 
+Today's events are:</h3>-->
 
 <?php
 

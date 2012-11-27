@@ -56,9 +56,8 @@ $cleandate = DATE("Y-m-d", STRTOTIME("$date"));
       <h1>Modify Event</h1>
 	  <a href="#" data-icon="arrow-l" data-rel="back">Back</a>
 </div>
-
 <div data-role="content">
-<h3>Please modify the date, time, location, and any notes you may have relating to your <?php echo $row['Task_Name'];?> event here.</h3>
+<h3>Event Name: <?php echo $row['Task_Name'];?> </h3>
 	
 <form action="insertCategories.php" method="post">
 	<div data-role="fieldcontain" style='text-align:center;'>
