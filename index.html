@@ -54,11 +54,11 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="content">
 		<div data-role="controlgroup" style="text-align:center;"> 
 				<img src="images/newicon.png" width="150" height="200" alt="Logo">
-				<h5>Welcome to My Personal Attendant!<br>			
+				<h4>Welcome to My Personal Attendant!<br>			
 				Login, or create a new account, so we can start 
 				getting you organized!<br>  
 				Or, tap 'More Information' to visit our website.				
-				</h5>
+				</h4>
 				<a href="#login" data-role="button" data-icon="check">Login</a>				
 				<a href="#createaccount" data-role="button" data-icon="arrow-r">Create Account</a>
 				<a href="http://www.mypersonalattendant.com/" target="_blank" data-role="button" data-icon="info">More Information</a>
@@ -70,7 +70,7 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="login" data-title="Login" data-fullscreen="true">    
 <div data-role="header">
       <h1>Login</h1>
-<a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+<a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 </div>
 
 <div data-role="content">
@@ -95,7 +95,7 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="createaccount" data-title="Create" data-fullscreen="true">    
 <div data-role="header">
       <h1>Create Account</h1>
-<a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+<a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 </div>
 
 <div data-role="content">
@@ -125,7 +125,7 @@ $(document).bind('pagebeforechange', function(event, data){
 	  		<input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password">
 		</div>
 	
-		<input type="submit" name="createaccnt" id="createaccnt" value="Save and Start Organizing">
+		<input type="submit" name="createaccnt" id="createaccnt" data-icon="check" value="Save and Start Organizing!">
 	</form>
 </div>
 </div>
@@ -208,13 +208,13 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="homeevents" data-title="Home Events">
 	<div data-role="header">
       <h1>Home Events</h1>
-	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	  <a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 	</div>
 <div data-role="content">
 		  <fieldset data-role="controlgroup">
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-				<h3>Select an Event. Then, click "Add Event."</h3>
+				<h3>Select an Event. Then, tap "Add" below.</h3>
 			</div>
 				<form action="php/createEvent.php" method="post">
 				<input type="radio" name="select" id="mowlawn" value="1">
@@ -237,8 +237,8 @@ $(document).bind('pagebeforechange', function(event, data){
 					  <label for="weekshop">Shopping</label>
 			    <input type="radio" name="select" id="specshop" value="10">
 					  <label for="specshop">Special Shopping</label>
-				<input type="submit" name="formSubmit" id="formSubmit" value="Add Event"/>
-				<a href="#" type="button" data-rel="back">Cancel</a>
+				<input type="submit" name="formSubmit" id="formSubmit" data-icon="plus" value="Add"/>
+				<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a>
 				</form>
 		    </fieldset>
 	</div>
@@ -250,14 +250,14 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="financeevents" data-title="Finance Events">
 <div data-role="header">
       <h1>Finance Events</h1>
-	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	  <a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
 		  <fieldset data-role="controlgroup">
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-				<h3>Select an Event. Then, click "Add Event."</h3>
+				<h3>Select an Event. Then, tap "Add" below.</h3>
 			</div>
 				<form action="php/createEvent.php" method="post">
 				<input type="radio" name="select" id="waterbill" value="13">
@@ -276,8 +276,8 @@ $(document).bind('pagebeforechange', function(event, data){
 					<label for="phonebill">Pay Phone Bill</label>
 				<input type="radio" name="select" id="buystock" value="19">
 					<label for="buystock">Buy Stocks</label>
-				<input type="submit" name="formSubmit" id="formSubmit" value="Add Event"/>
-				<a href="#" type="button" data-rel="back">Cancel</a>
+				<input type="submit" name="formSubmit" id="formSubmit" data-icon="plus" value="Add"/>
+				<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a>
 				</form>
 		    </fieldset>
 	</div>
@@ -291,22 +291,22 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="careerevents" data-title="Career Events">
 <div data-role="header">
       <h1>Career Events</h1>
-	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	  <a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
 		  <fieldset data-role="controlgroup">
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-				<h3>Select an Event. Then, click "Add Event."</h3>
+				<h3>Select an Event. Then, tap "Add" below.</h3>
 			</div>
 				<form action="php/createEvent.php" method="post">
 				<input type="radio" name="select" id="meeting" value="11">
 		    		<label for="meeting">Attend Work Meeting</label>
 				<input type="radio" name="select" id="shift" value="12">
 			    	<label for="shift">Attend Work Shift</label>
-				<input type="submit" name="formSubmit" id="formSubmit" value="Add Event"/>
-				<a href="#" type="button" data-rel="back">Cancel</a>
+				<input type="submit" name="formSubmit" id="formSubmit" data-icon="plus" value="Add"/>
+				<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a>
 				</form>
 		    </fieldset>
 	</div>
@@ -320,14 +320,14 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="familyevents" data-title="Family Events">
 <div data-role="header">
       <h1>Family Events</h1>
-	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	  <a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
 		  <fieldset data-role="controlgroup">
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-				<h3>Select an Event. Then, click "Add Event."</h3>
+				<h3>Select an Event. Then, tap "Add" below.</h3>
 			</div>
 				<form action="php/createEvent.php" method="post">
 				<input type="radio" name="select" id="weeklyevent" value="21">
@@ -344,8 +344,8 @@ $(document).bind('pagebeforechange', function(event, data){
 					<label for="anniversary">Wedding Anniversary</label>
 				<input type="radio" name="select" id="spousebirthday" value="27">
 					<label for="spousebirthday">Spouse's Birthday</label>
-				<input type="submit" name="formSubmit" id="formSubmit" value="Add Event"/>
-				<a href="#" type="button" data-rel="back">Cancel</a>
+				<input type="submit" name="formSubmit" id="formSubmit" data-icon="plus" value="Add"/>
+				<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a>
 				</form>
 		    </fieldset>
 	</div>
@@ -359,14 +359,14 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="autoevents" data-title="Auto Events">
 <div data-role="header">
       <h1>Auto Events</h1>
-	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	  <a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
 		  <fieldset data-role="controlgroup">
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-				<h3>Select an Event. Then, click "Add Event."</h3>
+				<h3>Select an Event. Then, tap "Add" below.</</h3>
 			</div>
 				<form action="php/createEvent.php" method="post">
 				<input type="radio" name="select" id="oilchange" value="28">
@@ -383,8 +383,8 @@ $(document).bind('pagebeforechange', function(event, data){
 					<label for="buytires">Buy Tires</label>
 				<input type="radio" name="select" id="buygas" value="34">
 					<label for="buygas">Buy Gas</label>
-				<input type="submit" name="formSubmit" id="formSubmit" value="Add Event"/>
-				<a href="#" type="button" data-rel="back">Cancel</a>
+				<input type="submit" name="formSubmit" id="formSubmit" data-icon="plus" value="Add"/>
+				<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a>
 				</form>
 		    </fieldset>
 	</div>
@@ -398,14 +398,14 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="miscevents" data-title="Misc Events">
 <div data-role="header">
       <h1>Misc Events</h1>
-	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	  <a href="previous-page.html" data-rel="back" data-icon="back">Back</a>
 	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
 		  <fieldset data-role="controlgroup">
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
-				<h3>Select an Event. Then, click "Add Event."</h3>
+				<h3>Select an Event. Then, tap "Add" below.</h3>
 			</div>
 				<form action="php/createEvent.php" method="post">
 				<input type="radio" name="select" id="drycleaning" value="35">
@@ -416,8 +416,8 @@ $(document).bind('pagebeforechange', function(event, data){
 				    <label for="marathon">Run Marathon</label>
 				<input type="radio" name="select" id="health" value="38">
 					<label for="health">Health Goal</label>
-				<input type="submit" name="formSubmit" id="formSubmit" value="Add Event"/>
-				<a href="#" type="button" data-rel="back">Cancel</a>
+				<input type="submit" name="formSubmit" id="formSubmit" data-icon="plus" value="Add"/>
+				<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a>
 				</form>
 		    </fieldset>
 	</div>

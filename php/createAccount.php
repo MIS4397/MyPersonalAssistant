@@ -61,9 +61,9 @@ if ($rows<1)
 	  	{
 	    	die('Error: ' . mysql_error());
 	  	}
-		echo "<h3>Thank you for signing up $firstName $lastName!</h3><br /><br />";?>
+		echo "<h4>Thank you for signing up, $firstName $lastName!</h4>";?>
 		<a href="../index.html#login" data-role="button">Login</a>
-		<? echo "<br /><br /><h3>Please login with $loginEmail as the username and the password that you chose.</h3>";
+		<? echo "<h4>Please login with $loginEmail as the username, and the password you chose.</h4>";
 	}
 	else
 	{?>
@@ -88,17 +88,17 @@ if ($rows<1)
 		  		<label for="confirmpass">Confirm Password:</label>
 		  		<input type="password" name="confirmpass" id="confirmpass">
 			</div>
-			<input type="submit" name="createaccnt" id="createaccnt" value="Save and Start Organizing">
+			<input type="submit" name="createaccnt" id="createaccnt" data-icon="arrow-r" value="Save and Start Organizing!">
 		</form>
 		<?
-		echo "<br/><font color='red'>Your passwords are not the same. Please retype them.</font>";
+		echo "<font color='red'>Your passwords do not match. Please retype them.</font>";
 	}
 }
 else
 {
-	echo "<h3>It seems that you already have an account $firstName $lastName!</h3><br /><br />";?>
-	<a href="../index.html#login" data-role="button">Login</a>
-	<? echo "<br /><br /><h3>Please login with $loginEmail as the username and the password you chose.</h3>";
+	echo "<h4>It seems that you already have an account, $firstName $lastName.</h4>";?>
+	<a href="../index.html#login" data-role="button" data-icon="check">Login</a>
+	<? echo "<h4>Please login with $loginEmail as the username, and the password you created.</h4>";
 }
 
 

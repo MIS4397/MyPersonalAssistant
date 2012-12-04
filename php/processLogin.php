@@ -7,13 +7,13 @@ $password = $_POST['password'];
 <!doctype html>
 <html>
 <head>
-  <title>Logging In</title>
+  <title>Logged In</title>
 </head>
 <body>
   <div data-role="page" id="loginResult">
     
 <div data-role="header">
-      <h1>myPA</h1>
+      <h1>MyPA</h1>
 </div>
     
 <div data-role="content">
@@ -65,7 +65,7 @@ if ($rows == 1)
 			$rows = $rows + 1;
 	    }
 	
-	echo "<h4 style='text-align:center;'>You're logged in and ready to go!</h4>"?>
+	echo "<h4 style='text-align:center;'>You're logged in, and ready to go!</h4>"?>
 			<div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
 					<img src="../images/newicon.png" width="150" height="200" alt="Logo">
 				<br/><br/>
@@ -105,7 +105,7 @@ else
 		<input type="submit" name="login" id="login" value="Login">	
 	</form>
 <?php 
-	echo "<font color = 'red'><br/><br/>Your account could not be found. Please try logging in again or creating an account.</font>";
+	echo "<font color = 'red'><br/><br/>Your account could not be found. Please try logging in again, or create a new account.</font>";
 }
 
 

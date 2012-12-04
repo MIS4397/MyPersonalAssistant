@@ -90,9 +90,9 @@ while($row = mysql_fetch_assoc($findrecord))
 				<input type="checkbox" name="misc" id="misc" value="misc"<?php if($trigmisc){ ?> checked="true" <?php } ?>>
 					 <label for="misc">Misc (Ex: Errands, Goals)</label>
 
-			<?php if(!$trigUpdate){?><input type="submit" name="formSubmit" id="formSubmit" value="Create Profile" class="insertCategories"/><?php }?>
-			<?php if($trigUpdate){?><input type="submit" name="updateCats" id="updateCats" value="Update Profile"/>
-			<a href="#" type="button" data-rel="back">Cancel</a><?php }?>
+			<?php if(!$trigUpdate){?><input type="submit" name="formSubmit" id="formSubmit" data-icon="arrow-r" value="Create Profile" class="insertCategories"/><?php }?>
+			<?php if($trigUpdate){?><input type="submit" name="updateCats" id="updateCats" data-icon="check" value="Update Profile"/>
+			<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a><?php }?>
 		</fieldset>
 	</form>
 </div>

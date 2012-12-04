@@ -41,7 +41,7 @@ $row = mysql_fetch_assoc($findrecord);
     
 <div data-role="header">
       <h1><?php echo $row['Task_Name'];?></h1>
-	  <a href="#" data-icon="back" data-rel="back">Back</a>
+	  <a href="#" data-icon="back" data-rel="back" data-icon="back">Back</a>
 </div>
 
 <div data-role="content">

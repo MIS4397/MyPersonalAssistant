@@ -16,8 +16,8 @@ $id = $_SESSION['globalid'];
 	    <h1>Event Deleted</h1>
 	  </div>
 	  <div data-role="content">
-	    <p>Your event has been successfully deleted.</p>
-	<a href="insertCategories.php" data-role="button">Ok</a>
+	    <p>Your event was deleted.</p>
+	<a href="insertCategories.php" data-role="button" data-icon="check">Ok</a>
 	  </div>
 	</div>
 </body>

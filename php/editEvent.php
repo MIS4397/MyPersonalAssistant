@@ -63,7 +63,7 @@ $cleandate = DATE("Y-m-d", STRTOTIME("$date"));
 				echo $row['Task_Name'];
 			}
 ?></h1>
-	  <a href="#" data-icon="back" data-rel="back">Back</a>
+	  <a href="#" data-icon="back" data-rel="back" data-icon="back">Back</a>
 </div>
 <div data-role="content">
 <!--<h3>Event Name: <?php echo $row['Task_Name'];?> </h3>-->

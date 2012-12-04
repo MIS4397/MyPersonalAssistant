@@ -17,8 +17,8 @@ $id = $_SESSION['globalid'];
 	    <h1>Event Added</h1>
 	  </div>
 	  <div data-role="content">
-	    <p>Your event has been successfully added.</p>
-		<a href="insertCategories.php" data-role="button">Ok</a>
+	    <p>Your event was added.</p>
+		<a href="insertCategories.php" data-role="button" data-icon="check">Ok</a>
 	  </div>
 	</div>
 </body>

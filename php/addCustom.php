@@ -15,7 +15,7 @@ $_SESSION['globaltype']=$type;
     
 <div data-role="header">
       <h1>Custom Event</h1>
-	  <a href="#" data-icon="arrow-l" data-rel="back">Back</a>
+	  <a href="#" data-icon="back" data-rel="back">Back</a>
 </div>
 
 <div data-role="content">
@@ -47,9 +47,9 @@ $_SESSION['globaltype']=$type;
 	<textarea cols="3" rows="5" name="notes" id="notes"></textarea>
 	</div>
 	
-	<div style='text-align:center;'>
-	<input type="submit" name="customSubmit" id="customSubmit" value="Create Event"/></div>
-	<a href="#" type="button" data-rel="back">Cancel</a>
+	<div style='text-align:center;' data-role="controlgroup" data-type="horizontal">
+	<input type="submit" name="customSubmit" id="customSubmit" data-icon="plus" value="Add"/>
+	<a href="#" type="button" data-rel="back" data-icon="delete" >Cancel</a></div>
 </form>
 </div>
 	</div>
