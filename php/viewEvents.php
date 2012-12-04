@@ -13,8 +13,8 @@ $id = $_SESSION['globalid'];
     
 <div data-role="header">
       <h1>Today's Events</h1>
-	  <a href="insertCategories.php" data-icon="arrow-l">Back</a>
-	  <a href="index.html#events" data-role="button">Add</a>
+	  <a href="insertCategories.php" data-icon="back">Back</a>
+	  <a href="index.html#events" data-role="button" data-icon="plus">More</a>
 </div>
 
 <div data-role="content">
@@ -69,8 +69,8 @@ else
 }		
 if (mysql_num_rows ($findrecord) > 0)
 {?>
-<input type="submit" name="editEvent" id="editEvent" value="Edit Event"/>
-<input type="submit" name="deleteEvent" id="deleteEvent" value="Delete Event"/>
+<input type="submit" name="editEvent" id="editEvent" data-icon="arrow-r" value="Edit"/>
+<input type="submit" name="deleteEvent" id="deleteEvent" data-icon="delete" value="Delete"/>
 <?php }?>
 </form>
 </fieldset>
@@ -79,9 +79,9 @@ if (mysql_num_rows ($findrecord) > 0)
 <div data-role="footer" data-id="footer" data-position="fixed">
 		<div data-role="navbar">
 				<ul>
-					<li><a href="viewEvents.php">Today</a></li>
-					<li><a href="viewWeeklyEvents.php">Weekly</a></li>
-					<li><a href="viewAllEvents.php">All</a></li>
+					<li><a href="viewEvents.php" data-icon="star" data-iconpos="top">Today</a></li>
+					<li><a href="viewWeeklyEvents.php" data-icon="grid" data-iconpos="top">Weekly</a></li>
+					<li><a href="viewAllEvents.php" data-icon="arrow-u" data-iconpos="top">All</a></li>
 				</ul>
 			</div>
 	</div>

@@ -55,11 +55,12 @@ $(document).bind('pagebeforechange', function(event, data){
 		<div data-role="controlgroup" style="text-align:center;"> 
 				<img src="images/newicon.png" width="150" height="200" alt="Logo">
 				<h5>Welcome to My Personal Attendant!<br>			
-				Login, or create a New Account, so we can start 
-				getting you organized!  Or, tap 'More Information' to visit our website.				
+				Login, or create a new account, so we can start 
+				getting you organized!<br>  
+				Or, tap 'More Information' to visit our website.				
 				</h5>
 				<a href="#login" data-role="button" data-icon="check">Login</a>				
-				<a href="#createaccount" data-role="button" data-icon="check">Create Account</a>
+				<a href="#createaccount" data-role="button" data-icon="arrow-r">Create Account</a>
 				<a href="http://www.mypersonalattendant.com/" target="_blank" data-role="button" data-icon="info">More Information</a>
 		</div>
 </div>
@@ -69,23 +70,24 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="login" data-title="Login" data-fullscreen="true">    
 <div data-role="header">
       <h1>Login</h1>
+<a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
 </div>
 
 <div data-role="content">
 		<form action="php/processLogin.php" method="post" data-transition="slide">
 			<div data-role="fieldcontain">
-			  <label for="loginEmail">Email:</label>
-			  <input type="email" name="loginEmail" id="loginEmail">
+			  <!--<label for="loginEmail">Email:</label>-->
+			  <input type="email" name="loginEmail" id="loginEmail" placeholder="Email">
 			</div>
 			
 			<div data-role="fieldcontain">
-			  <label for="password">Password:</label>
-			  <input type="password" name="password" id="password">
+			  <!--<label for="password">Password:</label>-->
+			  <input type="password" name="password" id="password" placeholder="Password">
 			</div>
 			
 			<input type="submit" name="login" id="login" value="Login">	
 		</form>
-		<a href="#createaccount" data-role="button" data-icon="check">Create Account</a>
+		<!--<a href="#createaccount" data-role="button" data-icon="check">Create Account</a>-->
 </div>
 </div>
 
@@ -93,33 +95,34 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="page" id="createaccount" data-title="Create" data-fullscreen="true">    
 <div data-role="header">
       <h1>Create Account</h1>
+<a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
 </div>
 
 <div data-role="content">
 	<form action="php/createAccount.php" method="post" data-transition="pop">
 		<div data-role="fieldcontain">
-	  		<label for="firstName">First Name:</label>
-	  		<input type="text" name="firstName" id="firstName">
+	  		<!--<label for="firstName">First Name:</label>-->
+	  		<input type="text" name="firstName" id="firstName" placeholder="First Name">
 		</div>
 	
 		<div data-role="fieldcontain">
-	  		<label for="lastName">Last Name:</label>
-	  		<input type="text" name="lastName" id="lastName">
+	  		<!--<label for="lastName">Last Name:</label>-->
+	  		<input type="text" name="lastName" id="lastName" placeholder="Last Name">
 		</div>
 	
 		<div data-role="fieldcontain">
-	  		<label for="loginEmail">Email:</label>
-	  		<input type="email" name="loginEmail" id="loginEmail">
+	  		<!--<label for="loginEmail">Email:</label>-->
+	  		<input type="email" name="loginEmail" id="loginEmail" placeholder="Email">
 		</div>
 	
 		<div data-role="fieldcontain">
-	  		<label for="password">Password:</label>
-	  		<input type="password" name="password" id="password">
+	  		<!--<label for="password">Password:</label>-->
+	  		<input type="password" name="password" id="password" placeholder="Password">
 		</div>
 	
 		<div data-role="fieldcontain">
-	  		<label for="confirmpass">Confirm Password:</label>
-	  		<input type="password" name="confirmpass" id="confirmpass">
+	  		<!--<label for="confirmpass">Confirm Password:</label>-->
+	  		<input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password">
 		</div>
 	
 		<input type="submit" name="createaccnt" id="createaccnt" value="Save and Start Organizing">
@@ -191,12 +194,14 @@ $(document).bind('pagebeforechange', function(event, data){
       <h1>Add Events</h1>
 </div>
 
+<div style="text-align: center;">
 <a href ="index.html#homeevents"><img src="images/Home.png" alt="Home" width="150" height="150"/></a>
 <a href ="index.html#financeevents"><img src="images/Finance.png" alt="Finance" width="150" height="150"/></a>
 <a href ="index.html#careerevents"><img src="images/Career.png" alt="Career" width="150" height="150"/></a>
 <a href ="index.html#familyevents"><img src="images/Family.png" alt="Family" width="150" height="150"/></a>
 <a href ="index.html#autoevents"><img src="images/Auto.png" alt="Auto" width="150" height="150"/></a>
-<a href ="index.html#miscevents"><img src="images/Misc.png" alt="Misc" width="150" height="150"/> </a>  
+<a href ="index.html#miscevents"><img src="images/Misc.png" alt="Misc" width="150" height="150"/> </a>
+</div> 
 </div>
 
 <!--Home Events Page-->
@@ -204,6 +209,7 @@ $(document).bind('pagebeforechange', function(event, data){
 	<div data-role="header">
       <h1>Home Events</h1>
 	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 	</div>
 <div data-role="content">
 		  <fieldset data-role="controlgroup">
@@ -228,7 +234,7 @@ $(document).bind('pagebeforechange', function(event, data){
 				<input type="radio" name="select" id="washclothes" value="8">
 					  <label for="washclothes">Wash Clothes</label>
 				<input type="radio" name="select" id="weekshop" value="9">
-					  <label for="weekshop">Weekly Shopping</label>
+					  <label for="weekshop">Shopping</label>
 			    <input type="radio" name="select" id="specshop" value="10">
 					  <label for="specshop">Special Shopping</label>
 				<input type="submit" name="formSubmit" id="formSubmit" value="Add Event"/>
@@ -245,6 +251,7 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="header">
       <h1>Finance Events</h1>
 	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
@@ -285,6 +292,7 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="header">
       <h1>Career Events</h1>
 	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
@@ -313,6 +321,7 @@ $(document).bind('pagebeforechange', function(event, data){
 <div data-role="header">
       <h1>Family Events</h1>
 	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
@@ -322,7 +331,7 @@ $(document).bind('pagebeforechange', function(event, data){
 			</div>
 				<form action="php/createEvent.php" method="post">
 				<input type="radio" name="select" id="weeklyevent" value="21">
-		    		<label for="weeklyevent">Attend Weekly Kids' Event</label>
+		    		<label for="weeklyevent">Attend Kids' Event</label>
 				<input type="radio" name="select" id="kidsschool" value="22">
 			    	<label for="kidsschool">Drop Kid(s) off at School</label>	
 				<input type="radio" name="select" id="kidsbirthday" value="23">
@@ -349,8 +358,9 @@ $(document).bind('pagebeforechange', function(event, data){
 <!--Auto Events Page-->
 <div data-role="page" id="autoevents" data-title="Auto Events">
 <div data-role="header">
-      <h1>Automotive Events</h1>
+      <h1>Auto Events</h1>
 	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">
@@ -387,8 +397,9 @@ $(document).bind('pagebeforechange', function(event, data){
 <!--Misc Events Page-->
 <div data-role="page" id="miscevents" data-title="Misc Events">
 <div data-role="header">
-      <h1>Home Events</h1>
+      <h1>Misc Events</h1>
 	  <a href="previous-page.html" data-rel="back" data-icon="arrow-l">Back</a>
+	<a href="index.html#events" data-role="button" data-icon="home">Home</a>
 </div>
 
 <div data-role="content">

@@ -126,3 +126,28 @@
 [25-Nov-2012 23:17:24] PHP Parse error:  syntax error, unexpected T_ELSE in /home/attend/public_html/app/php/viewAllEvents.php on line 59
 [25-Nov-2012 23:18:15] PHP Parse error:  syntax error, unexpected T_ELSE in /home/attend/public_html/app/php/viewAllEvents.php on line 60
 [25-Nov-2012 23:18:18] PHP Parse error:  syntax error, unexpected T_ELSE in /home/attend/public_html/app/php/viewAllEvents.php on line 60
+[27-Nov-2012 00:01:40] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 40
+[27-Nov-2012 00:02:48] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 79
+[27-Nov-2012 00:02:53] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 79
+[27-Nov-2012 00:06:20] PHP Parse error:  syntax error, unexpected '}' in /home/attend/public_html/app/php/categorySelect.php on line 87
+[27-Nov-2012 00:06:23] PHP Parse error:  syntax error, unexpected '}' in /home/attend/public_html/app/php/categorySelect.php on line 87
+[27-Nov-2012 00:10:06] PHP Parse error:  syntax error, unexpected '}' in /home/attend/public_html/app/php/categorySelect.php on line 87
+[27-Nov-2012 00:10:26] PHP Parse error:  syntax error, unexpected '}' in /home/attend/public_html/app/php/categorySelect.php on line 87
+[27-Nov-2012 00:18:13] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 39
+[27-Nov-2012 00:26:37] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 39
+[27-Nov-2012 00:30:42] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 39
+[27-Nov-2012 00:31:41] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 78
+[27-Nov-2012 00:58:24] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 00:58:59] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 00:59:57] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 01:00:21] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 01:03:43] PHP Fatal error:  Call to undefined function  prop() in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 01:04:12] PHP Fatal error:  Call to undefined function  prop() in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 01:04:23] PHP Fatal error:  Call to undefined function  attr() in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 01:05:01] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 01:05:26] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 01:32:49] PHP Parse error:  syntax error, unexpected '(', expecting T_VARIABLE or '$' in /home/attend/public_html/app/php/categorySelect.php on line 80
+[27-Nov-2012 02:17:57] PHP Parse error:  syntax error, unexpected '}' in /home/attend/public_html/app/php/categorySelect.php on line 96
+[28-Nov-2012 20:05:18] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/attend/public_html/app/php/eventAddPopup.php:5) in /home/attend/public_html/app/php/eventAddPopup.php on line 26
+[28-Nov-2012 20:06:26] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/attend/public_html/app/php/eventAddPopup.php:5) in /home/attend/public_html/app/php/eventAddPopup.php on line 19
+[28-Nov-2012 20:10:39] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/attend/public_html/app/php/eventAddPopup.php:5) in /home/attend/public_html/app/php/eventAddPopup.php on line 19

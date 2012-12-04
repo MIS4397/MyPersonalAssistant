@@ -14,7 +14,7 @@ if (!$con)
 
 mysql_select_db("attend_appdb", $con);
 
-$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID, Event_ID, DATE_FORMAT(Event_Date,'%m/%d/%Y') AS EvDate FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_ID = '$type' AND Event_UserID = '$id' ORDER BY EvDate, Event_Time";
+$sql = "SELECT DATE_FORMAT(Event_Time,'%l:%i %p') AS Time, Task_Name, Event_Loc, Event_Note, Event_UserID, Event_CustomName, Event_ID, DATE_FORMAT(Event_Date,'%m/%d/%Y') AS EvDate FROM Event, Task WHERE Event_TaskID = Task_ID AND Event_ID = '$type' AND Event_UserID = '$id' ORDER BY EvDate, Event_Time";
 
 if(!$sql)
 {
@@ -53,11 +53,20 @@ $cleandate = DATE("Y-m-d", STRTOTIME("$date"));
   <div data-role="page" id="createEvent" data-title="createEvent">
     
 <div data-role="header">
-      <h1>Modify Event</h1>
-	  <a href="#" data-icon="arrow-l" data-rel="back">Back</a>
+      <h1><?php 
+			if($row['Event_CustomName'])
+			{
+				echo $row['Event_CustomName'];
+			}
+			else
+			{
+				echo $row['Task_Name'];
+			}
+?></h1>
+	  <a href="#" data-icon="back" data-rel="back">Back</a>
 </div>
 <div data-role="content">
-<h3>Event Name: <?php echo $row['Task_Name'];?> </h3>
+<!--<h3>Event Name: <?php echo $row['Task_Name'];?> </h3>-->
 	
 <form action="insertCategories.php" method="post">
 	<div data-role="fieldcontain" style='text-align:center;'>
@@ -82,9 +91,9 @@ $cleandate = DATE("Y-m-d", STRTOTIME("$date"));
 	
 	<input type="hidden" name="eventID" id="eventID" value="<?php echo $row['Event_ID'];?>"/>
 	
-	<div style='text-align:center;'>
-	<input type="submit" name="updateEvent" id="updateEvent" value="Save Changes"/></div>
-	<a href="#" type="button" data-rel="back">Cancel</a>
+	<div style='text-align:center;' data-role="controlgroup" data-type="horizontal">
+	<input type="submit" name="updateEvent" id="updateEvent" data-icon="check" value="Save"/>
+	<a href="#" type="button" data-rel="back" data-icon="delete">Cancel</a></div>
 </form>
 </div><?php } ?>
 	</div>

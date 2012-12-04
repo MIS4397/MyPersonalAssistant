@@ -19,7 +19,7 @@ $_SESSION['globaltype']=$type;
 </div>
 
 <div data-role="content">
-<h3>Please enter the name, date, time, location, and any notes you may have relating to your event <?php /*echo $type*/?> here.</h3>
+<!--<h3>Please enter the name, date, time, location, and any notes you may have relating to your event <?php /*echo $type*/?> here.</h3>-->
 	
 <form action="insertCategories.php" method="post">
 	<div data-role="fieldcontain" style='text-align:center;'>

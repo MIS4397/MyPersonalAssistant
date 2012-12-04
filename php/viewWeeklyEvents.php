@@ -18,7 +18,7 @@ $id = $_SESSION['globalid'];
 </div>
 
 <div data-role="content">
-<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> This week's events are:</h3>
+<!--<h3>Please select an event below and click either the Edit or Delete buttons to modify the event. <br/><br/> This week's events are:</h3>-->
 <?php
 
 $con = mysql_connect("localhost","attend_admin","create");
